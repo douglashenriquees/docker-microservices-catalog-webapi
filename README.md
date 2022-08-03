@@ -16,3 +16,8 @@
 ## Executando o Container do MongoDB
 
 * ```docker run -d -p 27017:27017 --name catalog-mongo mongo```
+
+## Build da Imagem da WebApi
+
+* ```docker build -t catalog-webapi . --no-cache```
+* ```docker run -p 4400:5235 --name catalog-webapi catalog-webapi```
