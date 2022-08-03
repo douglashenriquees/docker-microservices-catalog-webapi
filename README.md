@@ -12,3 +12,7 @@
 * ```dotnet run --project solution_name.template_project```
 * ```app.UseSwaggerUI(x => { x.SwaggerEndpoint("/swagger/v1/swagger.json", "V1"); x.RoutePrefix = ""; });```
   * modificação na classe **Program.cs** para redirecionar ao **swagger** acessando a url exposta na api
+
+## Executando o Container do MongoDB
+
+* ```docker run -d -p 27017:27017 --name catalog-mongo mongo```

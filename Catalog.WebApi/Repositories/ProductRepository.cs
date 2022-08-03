@@ -25,7 +25,7 @@ public class ProductRepository : IProductRepository
 
     public async Task<ICollection<Product>> GetByName(string name)
     {
-        var filter = Builders<Product>.Filter.ElemMatch(x => x.Name, name);
+        var filter = Builders<Product>.Filter.Eq(x => x.Name, name);
 
         return await catalogContext.Products.Find(filter).ToListAsync();
     }
