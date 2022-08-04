@@ -20,4 +20,4 @@
 ## Build da Imagem da WebApi
 
 * ```docker build -t catalog-webapi . --no-cache```
-* ```docker run -p 4400:5235 --name catalog-webapi catalog-webapi```
+* ```docker run -p 4400:80 --name catalog-webapi catalog-webapi```
