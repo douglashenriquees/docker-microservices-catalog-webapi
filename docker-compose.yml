@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  catalog.db:
+    image: mongo
+    container_name: catalog.db
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./volume-mongo:/data/db
+
+  catalog.webapi:
+    image: ${DOCKER_REGISTRY-}catalog.webapi
+    container_name: catalog.webapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DatabaseSettings:ConnectionString=mongodb://catalog.db:27017
+    ports:
+      - 8800:80
+    depends_on:
+      - catalog.db

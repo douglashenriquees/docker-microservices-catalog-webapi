@@ -21,3 +21,9 @@
 
 * ```docker build -t catalog-webapi . --no-cache```
 * ```docker run -p 4400:80 --name catalog-webapi catalog-webapi```
+
+## Build do Cenário com Docker-Compose
+
+* ```docker-compose build --no-cache```
+* ```docker-compose up -d```
+* ```docker-compose down --rmi all -v```
